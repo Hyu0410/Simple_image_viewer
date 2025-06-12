@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append(`file${index}`, file);
     });
 
-    fetch("/upload", {
+    fetch("/upload-344912371038", {
       method: "POST",
       body: formData,
     })
