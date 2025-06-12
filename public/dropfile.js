@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!res.ok) throw new Error("서버 오류");
         return res.json();
     })
-    .then(() => {
-        alert("업로드가 완료되었습니다.");
+    .then((data) => {
+        alert(data.message);
         // imageUrls.forEach(url => {
         //     const img = document.createElement("img");
         //     img.src = url;
