@@ -1,0 +1,256 @@
+    #root {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    /* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: linear-gradient(180deg, #D4EEFA 0%, #D1D5FF 100%);
+} */
+
+    .title {
+      text-align: center;
+    }
+
+    .contents {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+    }
+
+    .contents .upload-box {
+      width: calc(50% - 15px);
+      box-sizing: border-box;
+      margin-right: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contents .upload-box .drag-file {
+      width: 100%;
+      height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 3px dashed #dbdbdb;
+    }
+    .contents .upload-box .drag-file.highlight {
+      border: 3px dashed red;
+    }
+    .contents .upload-box .drag-file .image {
+      width: 40px;
+    }
+    .contents .upload-box .drag-file .message {
+      margin-bottom: 0;
+    }
+    .contents .upload-box .file-label {
+      margin-top: 30px;
+      background-color: #8e9fd1;
+      /* border: 2px solid #64a075; */
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 0;
+      width: 65%;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .contents .upload-box .file {
+      display: none;
+    }
+
+    .right-panel {
+      width: calc(50% - 15px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 360px;
+    }
+
+    .files {
+      flex: 1;
+      overflow-y: auto;
+      border: 1px solid #dbdbdb;
+      padding: 0;
+    }
+
+    .files .file {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #dbdbdb;
+      gap: 20px;
+    }
+
+    .files .file:last-child {
+      border-bottom: none;
+    }
+
+    .files .file .thumbnail {
+      display: flex;
+      flex: none;
+      width: 50px;
+      margin-right: 20px;
+      align-items: center;
+    }
+    .files .file .thumbnail .image {
+      width: 100%;
+    }
+
+    .files .file .details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .files .file .details .header {
+      display: flex;
+    }
+    .files .file .details .header .name {
+      width: 100px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .files .file .details .header .size {
+      margin-left: auto;
+    }
+
+    .files .file .progress {
+      position: relative;
+      height: 6px;
+      background-color: #dbdbdb;
+      overflow: hidden;
+      margin-top: 4px;
+      border-radius: 10px;
+    }
+    .files .file .progress .bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #70b3bc;
+    }
+
+    .files .file .status {
+      display: flex;
+      width: 100%;
+    }
+    .files .file .status .speed {
+      margin-left: auto;
+    }
+
+    .month-select-container {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #dbdbdb;
+      border-radius: 6px;
+      background-color: #f9f9f9;
+    }
+
+    .month-select-container label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .month-select-container select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      min-width: 140px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .contents {
+        flex-direction: column;
+      }
+      .contents .upload-box,
+      .right-panel {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      .contents .upload-box .drag-file {
+        height: 150px;
+      }
+      .files {
+        height: 200px;
+      }
+    }
+
+    .delete-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .delete-btn:hover {
+      background-color: #c0392b;
+    }
+
+.month-select-container {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.month-select-container label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.month-select-container select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 140px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 버튼 컨테이너 */
+.button-container {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 끝 정렬 */
+  padding-right: 15px;
+}
+
+/* 버튼 스타일 */
+.button-container button {
+  padding: 14px 24px;
+  background-color: #4d59aa;
+  color: white;
+  border: none;
+  border-radius: 24px; /* 둥근 모서리, 크기에 맞게 */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #1a1d61;
+}
